@@ -37,7 +37,7 @@ with open(fName, 'w') as f:
                                 '#CoronavirusWho' or '#Coronavirusoutbreak' or '#ChinaVirus' or '#China' or
                                 '#Wuhancoronavirus' or '#Wuhanpneumonia' or '#Health' or 'Coronaoutbreak' or
                                 '2019-nCoV' or 'Virus' or 'SARS' or 'Corona Virus Outbreak',
-                                'max_id': max_id, 'since_id': since_id, 'count': tweetsPerQry, 'tweet_mode': 'extended'})
+                                'max_id': max_id-1, 'since_id': since_id, 'count': tweetsPerQry, 'tweet_mode': 'extended'})
         n_tweets = len(new_tweets.json()['statuses'])
         if n_tweets == 0:
             print("No more tweets found")
