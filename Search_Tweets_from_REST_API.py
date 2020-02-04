@@ -57,12 +57,3 @@ with open(fName, 'w') as f:
     f.close()
 
 print ("Downloaded {0} tweets, Saved to {1}".format(tweetCount, fName))
-
-
-
-
-
-
-
-
-
