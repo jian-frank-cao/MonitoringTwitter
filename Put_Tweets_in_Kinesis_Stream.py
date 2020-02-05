@@ -16,7 +16,7 @@ response = client.create_stream(
 
 ## Putting tweets in Kinesis stream ------------------------------------------------------------------------------------------
 # Connecting to Twitter API
-api = TwitterAPI(config.tina_consumer_key, config.tina_consumer_secret, config.tina_access_token_key, config.tina_access_token_secret)
+api = TwitterAPI(config.consumer_key, config.consumer_secret, config.access_token_key, config.access_token_secret)
 
 # Connecting to Kinesis stream
 kinesis = boto3.client("kinesis", region_name='us-east-2')
