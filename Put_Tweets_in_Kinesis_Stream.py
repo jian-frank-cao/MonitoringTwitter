@@ -20,6 +20,7 @@ api = TwitterAPI(config.tina_consumer_key, config.tina_consumer_secret, config.t
 
 # Connecting to Kinesis stream
 kinesis = boto3.client("kinesis", region_name='us-east-2')
+stream_name = "coronavirus"
 
 # Endless stream
 while True:
@@ -34,7 +35,7 @@ while True:
         for item in r:
             if 'text' in item:
                 # Randomly assigning partition keys so that tweets can be evenly directed to multiple shards
-                kinesis.put_record(StreamName="coronavirus", Data=json.dumps(item), PartitionKey=str(int((time.time()*10000000)%128)))
+                kinesis.put_record(StreamName=stream_name, Data=json.dumps(item), PartitionKey=str(int((time.time()*10000000)%128)))
             elif 'disconnect' in item:
                 event = item['disconnect']
                 if event['code'] in [2,5,6,7]:
