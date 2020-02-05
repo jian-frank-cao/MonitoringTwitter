@@ -75,7 +75,7 @@ while True:
     if len(IncomingBytes['Datapoints']) > 0 and len(IncomingRecords['Datapoints']) > 0:
         bytes_per_s = IncomingBytes['Datapoints'][0]['Sum']
         records_per_s = IncomingRecords['Datapoints'][0]['Sum']
-        print(str(datetime.datetime.now()) + '. ' + str(n_open_shards) + ' open shards, ' + str(round(bytes_per_s/(60*1024),2)) + ' KB/s, ' + str(round(records_per_s/60,2)) + ' Records/s')
+        print(str(datetime.datetime.now()) + '. ' + str(n_open_shards) + ' open shard(s), ' + str(round(bytes_per_s/(60*1024),2)) + ' KB/s, ' + str(round(records_per_s/60,2)) + ' Records/s')
         
         # Putting metrics in an S3 bucket
         response = firehose.put_record(DeliveryStreamName=firehose_name, Record={'Data': json.dumps({u'Timestamp': strftime("%a, %d %b %Y %H:%M:%S", gmtime()), u'OpenShards': n_open_shards, u'IncomingBytes': bytes_per_s, u'IncomingRecords': records_per_s})})
