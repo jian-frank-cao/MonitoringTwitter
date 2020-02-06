@@ -13,6 +13,12 @@ response = client.create_stream(
 )
 """
 
+## Keywords ------------------------------------------------------------------------------------------------------------------
+keywords = ['#coronavirus','#Coronavirus','coronavirus','#Wuhan','wuhan','#coronavirusoutbreak',
+            '#coronaoutbreak','#facemask','pandemic','#pandemic','#WHO','#2020ncov','#Ncov2019',
+            '#2019Ncov','#wuhanvirus','#wuhanlockdown','#WuhanSARS','#SARS2','#CoronavirusWho',
+            '#Coronavirusoutbreak','#ChinaVirus','#China','#Wuhancoronavirus','#Wuhanpneumonia',
+            '#Health','Coronaoutbreak','2019-nCoV','Virus','SARS','Corona Virus Outbreak']
 
 ## Putting tweets in Kinesis stream ------------------------------------------------------------------------------------------
 # Connecting to Twitter API
@@ -25,13 +31,7 @@ stream_name = "coronavirus"
 # Endless stream
 while True:
     try:
-        r = api.request('statuses/filter', {'track': '#coronavirus' or '#Coronavirus' or 'coronavirus' or '#Wuhan' or 'wuhan' or
-                                            '#coronavirusoutbreak' or '#coronaoutbreak' or '#facemask' or
-                                            'pandemic' or '#pandemic' or '#WHO' or '#2020ncov' or '#Ncov2019' or '#2019Ncov' or
-                                            '#wuhanvirus' or '#wuhanlockdown' or '#WuhanSARS' or '#SARS2' or
-                                            '#CoronavirusWho' or '#Coronavirusoutbreak' or '#ChinaVirus' or '#China' or
-                                            '#Wuhancoronavirus' or '#Wuhanpneumonia' or '#Health' or 'Coronaoutbreak' or
-                                            '2019-nCoV' or 'Virus' or 'SARS' or 'Corona Virus Outbreak'})
+        r = api.request('statuses/filter', {'track': keywords})
         for item in r:
             if 'text' in item:
                 # Randomly assigning partition keys so that tweets can be evenly directed to multiple shards
