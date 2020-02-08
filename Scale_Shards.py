@@ -16,14 +16,14 @@ wait             = 60.0    # Wait for next scaling
 
 # Connecting Kinesis stream
 kinesis = boto3.client("kinesis", region_name='us-east-2')
-stream_name = 'coronavirus'
+stream_name = 'primary-election'
 
 # Connecting to CloudWatch
 cloudwatch = boto3.client("cloudwatch", region_name='us-east-2')
 
 # Connecting to firehose
 firehose = boto3.client('firehose', region_name='us-east-2')
-firehose_name = 'twitter-coronavirus-monitor'
+firehose_name = '2020-primary-election-monitor'
 
 # Scaling shards
 while True:
