@@ -11,7 +11,7 @@ wait_retry = 60.0  # Seconds before each retry
 wait_next = 3300.0 # Seconds before each update
 
 # Using marker as a starting point (not include) for list_objects request
-marker = '2020/01/31/23/twitter-coronavirus-1-2020-01-31-23-53-43-4e65a429-496b-4f4c-a036-d6509911ca96'
+marker = u'2020/02/10/21/twitter-coronavirus-2-2020-02-10-21-50-09-78c13889-fe60-4e72-9503-32d545d6c530'
 
 # Function used to connect to Box FTP
 def connect():
