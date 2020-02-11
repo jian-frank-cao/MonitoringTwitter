@@ -27,11 +27,10 @@ marker = ['','','','','','','']
 marker_old = marker
 
 # Function used to connect to Box FTP
-def connect(path):
+def connect():
     ftp = FTP_TLS(config.box_host)
     ftp.debugging = 2
     ftp.login(config.box_username, config.box_passwd)
-    ftp.cwd(path)
     return ftp
 
 # Connecting to S3 buckets
@@ -39,14 +38,15 @@ s3 = boto3.client('s3', region_name='us-east-2')
 
 # Pushing S3 files to Box folder
 while True:
+    ftp = connect()
     for i in range(7):
+        ftp.cwd(box_path[i])
         response = s3.list_objects(Bucket=bucketname[i], Marker=marker[i])
         marker_old[i] = marker[i]
         retry = 0
         if 'Contents' in response:
             list_objects = response['Contents']
             marker[i] = list_objects[-1]['Key'] 
-            ftp = connect(box_path[i])
             for item in list_objects:
                 key = item['Key']
                 file = s3.get_object(
@@ -67,7 +67,7 @@ while True:
                         retry = 1
                         break # Temporary error, re-try uploading
                 file.close()
-            ftp.quit()
+    ftp.quit()
     if retry == 1:
         print('Retrying...')
         time.sleep(wait_retry)
