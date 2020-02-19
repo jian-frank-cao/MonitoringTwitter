@@ -4,7 +4,7 @@ filename = ''
 
 # Opening JSON file
 file = open(filename, 'r')
-file_content = file.read().decode('utf-8')
+file_content = file.read()
 
 # Reading JSON file obtained from S3 bucket
 data = json.loads('['+file_content.replace('}{','},{')+']')
