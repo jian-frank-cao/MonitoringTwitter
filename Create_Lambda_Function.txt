@@ -39,7 +39,7 @@ def lambda_handler(event, context):
 """     
 1. Copy the sample code into a file named lambda_function.py.
 2. Create a virtual environment.
-                    s3-python$ virtualenv py3env
+                    s3-python$ virtualenv -p /usr/bin/python3 py3env
                     s3-python$ source py3env/bin/activate
 3. Install libraries in the virtual environment
                     (py3env) s3-python$ pip install Pillow boto3
