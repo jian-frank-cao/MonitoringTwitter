@@ -6,7 +6,7 @@ Created on Sun Jul 12 11:07:17 2020
 """
 ## Environment ----------------------------------------------------------------
 import os
-credential_path = '/home/jccit_caltech_edu/COVID-19/elections-277319-b79932ea03af.json'
+credential_path = ''
 os.system('export GOOGLE_APPLICATION_CREDENTIALS="{}"'.format(credential_path))
 os.chdir('/home/jccit_caltech_edu/COVID-19/')
 from google.cloud import storage
