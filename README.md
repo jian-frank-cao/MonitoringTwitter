@@ -1,13 +1,6 @@
 # MonitoringTwitter
 Monitoring Twitter Project - The Division of Humanities and Social Sciences, California Institute of Technology
 
-#### Table of contents
-
-1. [Section 1](## Process)
-2. [Section 2](#section-2)
-    - [Subsection a](#subsection-a)
-    - [Subsection b](#subsection-b)
-
 ## Process
 ![flow chart](./monitoringtwitter.png)
 
