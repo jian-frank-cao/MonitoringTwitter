@@ -1,6 +1,8 @@
 # MonitoringTwitter
 Monitoring Twitter Project - The Division of Humanities and Social Sciences, California Institute of Technology
 
+[The technical report for the Twitter monitors](https://arxiv.org/abs/2005.02442)
+
 - [The AWS Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-aws-twitter-monitors)
 - [The GCP Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-gcp-twitter-monitors)
 - [The Oracle Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-oracle-monitors)
