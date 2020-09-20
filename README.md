@@ -1,7 +1,9 @@
 # MonitoringTwitter
 Monitoring Twitter Project - The Division of Humanities and Social Sciences, California Institute of Technology
 
-## Process
+[The AWS Twitter Monitors]()
+
+## The AWS Twitter Monitors
 ![flow chart](./monitoringtwitter.png)
 
 ### 1.	Requesting Twitter stream from Twitter API
@@ -27,7 +29,7 @@ Every hour, the new JSON files in the S3 bucket are pushed to Box FTP, so that t
 
 [Send_S3_Files_to_Box_FTP.py](./Send_S3_Files_to_Box_FTP.py)
 
-## Tools
+### Tools
 [Search_Tweets_from_REST_API.py](./Search_Tweets_from_REST_API.py)
 
 [Parse_Kinesis_Stream_to_MariaDB.py](./Parse_Kinesis_Stream_to_MariaDB.py)
