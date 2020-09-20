@@ -2,7 +2,7 @@
 Monitoring Twitter Project - The Division of Humanities and Social Sciences, California Institute of Technology
 
 - [The AWS Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-aws-twitter-monitors)
-- [The GCP Twitter Monitors]()
+- [The GCP Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-gcp-twitter-monitors)
 - [The Oracle Twitter Monitors]()
 
 ## The AWS Twitter Monitors
@@ -40,22 +40,46 @@ Every hour, the new JSON files in the S3 bucket are pushed to Box FTP, so that t
 
 ## The GCP Twitter Monitors
 
-### a. Requesting Tweets from Twitter API and Publish the Tweets in Pub/Sub Topics
+### A. Requesting Tweets from Twitter API and Publish them in Pub/Sub Topics
 Use twitter developer’s credentials to request real time twitter stream, filter the stream using keywords of interest, then publish the collected tweets in a Pub/Sub Topic.
+
 [tweets_to_pubsub.py](./GCP/tweets_to_pubsub.py)
 
-### b. Requesting Tweets from Twitter API and Save the Tweets on a Compute Instance
+### B. Requesting Tweets from Twitter API and Save them on a Compute Instance
 Use twitter developer’s credentials to request real time twitter stream, filter the stream using keywords of interest, then save the tweets temporarily on a compute instance.
+
 [tweets_to_instance.py](./GCP/tweets_to_instance.py)
 
-### c. Moving Collected Tweets from the Compute Instance to Cloud Storage
+### C. Moving Collected Tweets from the Compute Instance to Cloud Storage
 Moving the tweets from the compute instance's hard drive to a Cloud Storage folder.
+
 [instance_to_cloud_storage.py](./GCP/instance_to_cloud_storage.py)
 
-### d. Moving Collected Tweets from the Compute Instance to Google Drive
+### D. Moving Collected Tweets from the Compute Instance to Google Drive
 Moving the tweets from the compute instance's hard drive to a Google Drive folder.
+
 [instance_to_google_drive.py](./GCP/instance_to_google_drive.py)
 
-### e. Moving Files from Box FTP to Google Drive
+### E. Moving Files from Box FTP to Google Drive
 Moving all files in a Box folder to a Google Drive folder.
+
 [box_to_google_drive.py](./GCP/box_to_google_drive.py)
+
+
+## The Oracle Monitors
+
+### 1. Requesting Tweets from Twitter API and Publish them in an Oracle Stream
+
+[1_twitter_to_stream.py](./Oracle/1_twitter_to_stream.py)
+
+### 2. Read the Tweets from the Oracle Stream and Save them on a Compute Instance
+
+[2_stream_to_istance.py](./Oracle/2_stream_to_istance.py)
+
+### 3. Moving Collected Tweets from the Compute Instance to Box FTP
+
+[3_instance_to_box.py](./Oracle/3_instance_to_box.py)
+
+### Tools
+
+[extract_text.py](./Oralce/4_extract_text.py)
