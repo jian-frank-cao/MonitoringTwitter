@@ -3,7 +3,7 @@ Monitoring Twitter Project - The Division of Humanities and Social Sciences, Cal
 
 - [The AWS Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-aws-twitter-monitors)
 - [The GCP Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-gcp-twitter-monitors)
-- [The Oracle Twitter Monitors]()
+- [The Oracle Twitter Monitors](https://github.com/jian-frank-cao/MonitoringTwitter#the-oracle-monitors)
 
 ## The AWS Twitter Monitors
 ![flow chart](./monitoringtwitter.png)
