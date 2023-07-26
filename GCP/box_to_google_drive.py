@@ -97,7 +97,7 @@ def upload_object(file, path, folder_id, service):
 def connect(box_path):
     ftp = FTP_TLS('ftp.box.com')
     # ftp.debugging = 2
-    ftp.login('jccit@caltech.edu', 'cJ19870915@#')
+    ftp.login('USERNAME', 'PASSWORD')
     ftp.cwd(box_path[0])
     print("Connected to Box FTP")
     return ftp
